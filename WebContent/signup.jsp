@@ -1,5 +1,4 @@
-<!--Created on 16-2-2018, by Shivraj Keshaowar-->
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +14,9 @@
 
 <body>
 
-	<header><!--start header-->
+	<header>
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 			
 			<div class="container">
 				
@@ -29,13 +28,13 @@
 							<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="index.html">Mini-Media</a>
+					<a class="navbar-brand" href="index.jsp">Mini-Media</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>				
 				</div>
 
@@ -51,7 +50,7 @@
 
 			<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><!--start cols-->
 
-				<form><!--start form-->
+				<form method="post" action="register_user.jsp"><!--start form-->
 
 					<h2 class="form-heading">SIGN UP</h2>
 					<div class="form-group">
@@ -72,7 +71,7 @@
 
 					<input type="submit" name="submit" value="Submit" class="btn btn-primary">
 
-					<p>Already a user?<a href="login.html">Login</a></p>
+					<p>Already a user?<a href="login.jsp">Login</a></p>
 
 				</form><!--end form-->	
 

@@ -30,13 +30,13 @@
 							<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="index.html">Mini-Media</a>
+					<a class="navbar-brand" href="index.jsp">Mini-Media</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>				
 				</div>
 
