@@ -1,4 +1,6 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import ="controller.*"
+		contentType="text/html" 
+		pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +56,7 @@
 
 					<h2 class="form-heading">SIGN UP</h2>
 					<div class="form-group">
-						<input type="text" name="name" placeholder="Name" class="form-control">
+						<input type="text" name="username" placeholder="Name" class="form-control">
 					</div>
 
 					<div class="form-group">
@@ -80,7 +82,19 @@
 		</div><!--end row-->		
 	
 	</div><!--end container-->
-
+<center>
+<h4 style="color:red;"><% 
+	String username = (String)session.getAttribute(Message.USERNAME); 
+	if(username!=null){
+	  response.sendRedirect("profile.jsp");
+	}
+	String msg = (String)session.getAttribute(Message.MSG); 
+	if(msg!=null){
+	  out.print(msg);
+	  session.removeAttribute(Message.MSG);
+	}
+%></h4>
+</center>
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 		
 		<div class="container">

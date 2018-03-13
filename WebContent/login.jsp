@@ -1,5 +1,4 @@
-<!--Created on 16-2-2018, by Shivraj Keshaowar-->
-
+<%@ page import ="controller.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +44,7 @@
 
 	</header><!--end header-->
 
+
 	<div class="container"><!--start container-->	
 
 		<div class="row"><!--start row-->
@@ -56,7 +56,6 @@
 					<div class="panel-heading">
 						<h3>Login Form</h3>
 					</div>
-
 					<div class="panel-body">
 
 						<p class="text-warning">Login to your account</p>
@@ -87,7 +86,21 @@
 		</div><!--end row-->		
 	
 	</div><!--end container-->
-
+<center>
+<h4 style="color:red;">
+<% 
+	String username = (String)session.getAttribute(Message.USERNAME); 
+	if(username!=null){
+	  response.sendRedirect("profile.jsp");
+	}
+	String msg = (String)session.getAttribute(Message.MSG); 
+	if(msg!=null){
+	  out.print(msg);
+	  session.removeAttribute(Message.MSG);
+	}
+%>
+</h4>
+</center>
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 		
 		<div class="container">

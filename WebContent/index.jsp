@@ -1,6 +1,4 @@
-<!--Created on 16-2-2018, by Shivraj Keshaowar-->
-
-
+<%@ page import ="controller.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +13,12 @@
 </head>
 
 <body>
-
+<% 
+	String username = (String)session.getAttribute(Message.USERNAME); 
+	if(username!=null){
+	  response.sendRedirect("profile.jsp");
+	}
+%>
 	<header><!--start header-->
 		
 		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
