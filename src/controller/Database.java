@@ -1,0 +1,128 @@
+package controller;
+
+import model.*;
+import java.sql.*;
+import java.util.ArrayList;
+
+public class Database {
+	private static final String username = "root";
+	private static final String password = "";
+	private static final String url = "jdbc:mysql://localhost:3306/users?"
+									+ "user=" +username
+									+ "&password=" +password;
+	
+	private static Connection conn = null;
+	private static PreparedStatement pstatement = null;
+	private static String queryString = null;
+	private static ResultSet resultSet = null;
+
+	private static void importJDBC(){
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(ClassNotFoundException e){
+			// log data
+		}
+		catch(Exception e){
+			// log data
+		}
+	}
+	
+	private static Connection getConnection(){
+		try{
+			return DriverManager.getConnection(url);
+		}catch(Exception e){
+			//log data
+			return null;
+		}
+	}
+	
+	public static Boolean registerUser(User user){
+		try{
+			importJDBC();
+			conn = getConnection();
+			queryString = "INSERT INTO user(username,email,password) VALUES (?,?,?)";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, user.getUsername());
+        	pstatement.setString(2, user.getEmail());
+        	pstatement.setString(3, user.getPassword());   
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			// log data
+		}
+		return false;
+	}
+	
+	public static User validateUser(User user){
+		try{
+			importJDBC();
+			conn = getConnection();
+			pstatement = conn.prepareStatement("Select * from user where email=? and password=?");
+	        pstatement.setString(1, user.getEmail());
+	        pstatement.setString(2, user.getPassword());
+	        resultSet = pstatement.executeQuery();	   	 	
+	        if(resultSet.next()) {
+	   			return generateUser();
+	   	 	}   
+	        resultSet.close();
+        	conn.close();
+	 		pstatement.close();
+		}catch(Exception e){
+			// log data
+		}
+		return null;
+	}
+	
+	private static User generateUser() throws SQLException{
+		return new User(resultSet.getString(Message.USERNAME),resultSet.getString(Message.EMAIL),resultSet.getString(Message.PASSWORD));
+	}
+	
+	public static Boolean addStatus(Status status){
+		try{
+			importJDBC();
+			conn = getConnection();
+			queryString = "INSERT INTO status(username,email,status,datetime) VALUES (?,?,?,?)";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, status.getUsername());
+        	pstatement.setString(2, status.getEmail());
+        	pstatement.setString(3, status.getText()); 
+        	pstatement.setDate(4, status.getDateTime()); 
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			// log data
+		}
+		return false;
+	}
+	
+	public static ArrayList<Status> getAllStatus(){
+		ArrayList<Status> list = new ArrayList<Status>();
+		try{
+			importJDBC();
+			conn = getConnection();
+			pstatement = conn.prepareStatement("Select * from status");
+	        resultSet = pstatement.executeQuery();	   	 	
+	        while(resultSet.next()){
+	            list.add(generateStatus());
+	         }
+	        resultSet.close();
+        	conn.close();
+	 		pstatement.close();
+		}catch(Exception e){
+			// log data
+		}
+		return list;
+	}
+	
+	private static Status generateStatus() throws SQLException{
+		return new Status(resultSet.getString(Message.USERNAME),
+				resultSet.getString(Message.EMAIL),
+				resultSet.getString(Message.TEXT),
+				resultSet.getDate(Message.DATETIME)
+				);
+	}
+}

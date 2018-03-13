@@ -1,4 +1,6 @@
-<%@ page import ="controller.*" %>
+<%@ page import ="controller.*"
+		 import ="model.*"
+		 import ="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,6 +57,7 @@
 						<h6 style="color:black;">Email: <%= session.getAttribute( Message.EMAIL ) %></h6>
 				</div>
 			</div>
+			<div>
 			<div class="form-outer">
 				<div class="form-inner">
 					<form class="form-status" action="post_status.jsp" method="post">				
@@ -62,6 +65,21 @@
 						<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
 					</form>
 				</div>
+			</div>
+
+					<%
+						ArrayList<Status> feed = Database.getAllStatus();
+						for(Status temp:feed){
+							%>
+			<div class="form-outer">
+				<div class="form-inner">
+					<h2 style="color:black;">
+							<%out.print(temp.getText());%>
+					</h2>
+				</div>
+			</div>
+						<%}%>
+					
 			</div>
 		</div>
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->

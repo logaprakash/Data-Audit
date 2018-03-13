@@ -1,6 +1,7 @@
-package controller;
+package model;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 public class Status {
 	private String username;
@@ -8,19 +9,27 @@ public class Status {
 	private String text;
 	private Date dateTime;
 	
-	Status(){
+	public Status(){
 		this.username = "";
 		this.email = "";
 		this.text = "";
-		this.dateTime = new Date();
+		long millis=System.currentTimeMillis();  
+		this.dateTime = new Date(millis);
 	}
 	
-	Status(String username,String email,String text){
+	public Status(String username,String email,String text){
 		this.username = username;
 		this.email = email;
 		this.text = text;
-		this.dateTime = new Date();
-		
+		long millis=System.currentTimeMillis();  
+		this.dateTime = new Date(millis);
+	}
+	
+	public Status(String username,String email,String text,Date dateTime){
+		this.username = username;
+		this.email = email;
+		this.text = text;
+		this.dateTime = dateTime;
 	}
 	
 	public String getUsername() {
@@ -54,6 +63,7 @@ public class Status {
 	public void setDateTime(Date dateTime) {
 		this.dateTime = dateTime;
 	}
+	
 	
 	
 }
