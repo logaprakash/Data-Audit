@@ -83,18 +83,18 @@ public class Database {
 		try{
 			importJDBC();
 			conn = getConnection();
-			queryString = "INSERT INTO status(username,email,status,datetime) VALUES (?,?,?,?)";
+			queryString = "INSERT INTO status(username,email,text,datetime) VALUES (?,?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, status.getUsername());
         	pstatement.setString(2, status.getEmail());
         	pstatement.setString(3, status.getText()); 
-        	pstatement.setDate(4, status.getDateTime()); 
+        	pstatement.setString(4, (status.getDateTime()).toString()); 
         	pstatement.executeUpdate();
         	conn.close();
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			// log data
+			System.out.print(e.toString());
 		}
 		return false;
 	}
@@ -105,7 +105,7 @@ public class Database {
 			importJDBC();
 			conn = getConnection();
 			pstatement = conn.prepareStatement("Select * from status");
-	        resultSet = pstatement.executeQuery();	   	 	
+	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
 	            list.add(generateStatus());
 	         }
@@ -114,6 +114,7 @@ public class Database {
 	 		pstatement.close();
 		}catch(Exception e){
 			// log data
+		  System.out.println(e.toString());
 		}
 		return list;
 	}
@@ -122,7 +123,6 @@ public class Database {
 		return new Status(resultSet.getString(Message.USERNAME),
 				resultSet.getString(Message.EMAIL),
 				resultSet.getString(Message.TEXT),
-				resultSet.getDate(Message.DATETIME)
-				);
+				resultSet.getString(Message.DATETIME));
 	}
 }

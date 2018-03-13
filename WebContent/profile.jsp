@@ -49,7 +49,8 @@
 		</nav><!--end nav-->
 
 	</header><!--end header-->
-		<div>
+
+		
 			<div class="profile-outer">
 				<div class="profile-inner">
 						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
@@ -57,31 +58,32 @@
 						<h6 style="color:black;">Email: <%= session.getAttribute( Message.EMAIL ) %></h6>
 				</div>
 			</div>
+			
 			<div>
-			<div class="form-outer">
-				<div class="form-inner">
-					<form class="form-status" action="post_status.jsp" method="post">				
-						<input name="status_input" class="form-status-textbox" type="text" placeholder="Enter somthing here ..."/>
-						<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
-					</form>
+				<div class="form-outer">
+					<div class="form-inner">
+						<form class="form-status" action="post_status.jsp" method="post">				
+							<input name="status_input" class="form-status-textbox" type="text" placeholder="Enter somthing here ..."/>
+							<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
+						</form>
+					</div>
 				</div>
 			</div>
-
-					<%
+		
+				<div style="display:inline-block;padding:5%;">	<%
 						ArrayList<Status> feed = Database.getAllStatus();
 						for(Status temp:feed){
 							%>
-			<div class="form-outer">
+			<div>
 				<div class="form-inner">
-					<h2 style="color:black;">
+					<h6 style="color:black;">
 							<%out.print(temp.getText());%>
-					</h2>
+					</h6>
 				</div>
-			</div>
-						<%}%>
-					
-			</div>
-		</div>
+			</div><br>
+						<%}%></div>
+			
+
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 
 		<div class="align-center">

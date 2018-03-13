@@ -1,35 +1,34 @@
 package model;
 
-import java.sql.Date;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Status {
 	private String username;
 	private String email;
 	private String text;
-	private Date dateTime;
+	private String dateTime;
 	
 	public Status(){
 		this.username = "";
 		this.email = "";
-		this.text = "";
-		long millis=System.currentTimeMillis();  
-		this.dateTime = new Date(millis);
+		this.text = "";  
+		this.dateTime = getDate(); 
 	}
 	
 	public Status(String username,String email,String text){
 		this.username = username;
 		this.email = email;
 		this.text = text;
-		long millis=System.currentTimeMillis();  
-		this.dateTime = new Date(millis);
+		this.dateTime = getDate(); 
 	}
 	
-	public Status(String username,String email,String text,Date dateTime){
+	public Status(String username,String email,String text,String dateTime){
 		this.username = username;
 		this.email = email;
 		this.text = text;
-		this.dateTime = dateTime;
+		this.dateTime = dateTime; 
 	}
 	
 	public String getUsername() {
@@ -56,14 +55,17 @@ public class Status {
 		this.text = text;
 	}
 
-	public Date getDateTime() {
+	public String getDateTime() {
 		return dateTime;
 	}
 
-	public void setDateTime(Date dateTime) {
+	public void setDateTime(String dateTime) {
 		this.dateTime = dateTime;
 	}
 	
-	
+	private String getDate(){
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		return dateFormat.format(new Date());
+	}
 	
 }
