@@ -1,0 +1,81 @@
+<%@ page import ="controller.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= session.getAttribute( Message.USERNAME ) %></title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/custom_style.css">
+</head>
+
+<body>
+<% 
+	String username = (String)session.getAttribute(Message.USERNAME); 
+	if(username==null){
+	  response.sendRedirect("login.jsp");
+	}
+%>
+	<header><!--start header-->
+		
+		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
+			
+			<div class="container">
+				
+				<div class="navbar-header">
+					
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="index.jsp">Mini-Media</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="logout.jsp"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+					</ul>				
+				</div>
+
+			</div>
+			
+		</nav><!--end nav-->
+
+	</header><!--end header-->
+		<div>
+			<div class="profile-outer">
+				<div class="profile-inner">
+						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
+						<h2 style="color:black;">Welcome, <%= session.getAttribute( Message.USERNAME ) %></h2>
+						<h6 style="color:black;">Email: <%= session.getAttribute( Message.EMAIL ) %></h6>
+				</div>
+			</div>
+			<div class="form-outer">
+				<div class="form-inner">
+					<form class="form-status" action="post_status.jsp" method="post">				
+						<input name="status_input" class="form-status-textbox" type="text" placeholder="Enter somthing here ..."/>
+						<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
+					</form>
+				</div>
+			</div>
+		</div>
+	<footer class="footer navbar-fixed-bottom"><!--start footer-->
+
+		<div class="align-center">
+			Copyright &copy; Data-Audit. All Rights Reserved
+		</div>	
+
+	</footer><!--end footer-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>
