@@ -12,11 +12,11 @@
    			session.setAttribute(Message.USERNAME,user.getUsername());
    			session.setAttribute(Message.EMAIL,user.getEmail());
    			response.sendRedirect("profile.jsp");
-   			CustomLog.log("validate_user","info",user.getEmail()+" - " + Message.VALID_LOGIN);
+   			CustomLog.log("validate_user",Message.LOG_INFO,user.getEmail()+" - " + Message.VALID_LOGIN);
    	 	}      
         else{
        		session.setAttribute(Message.MSG,Message.INVALID_LOGIN);
-       		CustomLog.log("validate_user","info",email+ " - " +Message.INVALID_LOGIN);
+       		CustomLog.log("validate_user",Message.LOG_INFO,email+ " - " +Message.INVALID_LOGIN);
        		response.sendRedirect("login.jsp"); 
         }   	 	
 %>

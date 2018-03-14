@@ -23,10 +23,10 @@ public class Database {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
-			// log data
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		catch(Exception e){
-			// log data
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class Database {
 		try{
 			return DriverManager.getConnection(url);
 		}catch(Exception e){
-			//log data
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 			return null;
 		}
 	}
@@ -53,7 +53,7 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			// log data
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
@@ -73,7 +73,7 @@ public class Database {
         	conn.close();
 	 		pstatement.close();
 		}catch(Exception e){
-			// log data
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		return null;
 	}
@@ -97,7 +97,7 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			System.out.print(e.toString());
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
@@ -116,8 +116,7 @@ public class Database {
         	conn.close();
 	 		pstatement.close();
 		}catch(Exception e){
-			// log data
-		  System.out.println(e.toString());
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		return list;
 	}
@@ -144,7 +143,7 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			System.out.print(e.toString());
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}

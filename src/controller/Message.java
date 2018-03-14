@@ -13,4 +13,12 @@ public final class Message {
 	public static final String PASSWORD = "password";
 	public static final String TEXT = "text";
 	public static final String DATETIME = "datetime";
+	
+	//Log variable
+	public static final String LOG_INFO = "INFO";
+	public static final String LOG_FATAL = "FATAL";
+	public static final String LOG_ERROR = "ERROR";
+	public static final String LOG_DEBUG = "DEBUG";
+	public static final String LOG_WARN = "WARN";
+	public static final String LOG_TRACE = "TRACE";
 }

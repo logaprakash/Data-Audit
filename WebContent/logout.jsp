@@ -1,4 +1,5 @@
-<%@ page import ="controller.*"
+<%@ page 
+		import ="controller.*"
 		language="java" 
 		contentType="text/html; charset=ISO-8859-1"
     	pageEncoding="ISO-8859-1"%>
@@ -10,7 +11,7 @@
 		session.removeAttribute(Message.MSG);
 		session.removeAttribute(Message.USERNAME);
 		session.removeAttribute(Message.EMAIL);
-		CustomLog.log("logout","info",email +" - " + Message.LOGGED_OUT);
+		CustomLog.log("logout",Message.LOG_INFO,email +" - " + Message.LOGGED_OUT);
 	}
 
 	response.sendRedirect("login.jsp");

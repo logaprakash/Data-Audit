@@ -10,17 +10,17 @@ public class CustomLog {
 	
 	public static void log(String classname,String level,String log){
 		logger = Logger.getLogger(classname);
-		if(level.equals("info"))
+		if(level.equals(Message.LOG_INFO))
 			logger.info(log);
-		else if(level.equals("debug"))
+		else if(level.equals(Message.LOG_DEBUG))
 			logger.debug(log);
-		else if(level.equals("error"))
+		else if(level.equals(Message.LOG_ERROR))
 			logger.error(log);
-		else if(level.equals("warn"))
+		else if(level.equals(Message.LOG_WARN))
 			logger.warn(log);
-		else if(level.equals("fatal"))
+		else if(level.equals(Message.LOG_FATAL))
 			logger.fatal(log);
-		else if(level.equals("trace"))
+		else if(level.equals(Message.LOG_TRACE))
 			logger.trace(log);
 		
 		Database.addLog(new Log(classname,level,log));
