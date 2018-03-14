@@ -1,8 +1,7 @@
 <%@ page import ="controller.*" 
 		 import ="model.*" 
-		 import ="org.apache.log4j.Logger" %>
+		 %>
 <%
-	final Logger logger = Logger.getLogger("validate_user.jsp");
 	
     String email = request.getParameter("email");   
     String password = request.getParameter("password");
@@ -13,10 +12,11 @@
    			session.setAttribute(Message.USERNAME,user.getUsername());
    			session.setAttribute(Message.EMAIL,user.getEmail());
    			response.sendRedirect("profile.jsp");
-   			logger.info("this is test");
+   			CustomLog.log("validate_user","info",user.getEmail()+" - " + Message.VALID_LOGIN);
    	 	}      
         else{
        		session.setAttribute(Message.MSG,Message.INVALID_LOGIN);
+       		CustomLog.log("validate_user","info",email+ " - " +Message.INVALID_LOGIN);
        		response.sendRedirect("login.jsp"); 
         }   	 	
 %>

@@ -50,7 +50,7 @@
 
 	</header><!--end header-->
 
-		
+		<div class="col-md-4">
 			<div class="profile-outer">
 				<div class="profile-inner">
 						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
@@ -63,27 +63,28 @@
 				<div class="form-outer">
 					<div class="form-inner">
 						<form class="form-status" action="post_status.jsp" method="post">				
-							<input name="status_input" class="form-status-textbox" type="text" placeholder="Enter somthing here ..."/>
+							<Textarea name="status_input" class="form-status-textbox" cols="5" rows="5" placeholder="Enter somthing here ..."></Textarea>
 							<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
 						</form>
 					</div>
 				</div>
 			</div>
-		
-				<div style="display:inline-block;padding:5%;">	<%
+		</div>
+		<div class="col-md-4">
+					<%
 						ArrayList<Status> feed = Database.getAllStatus();
 						for(Status temp:feed){
 							%>
-			<div>
+			<div style="display:inline-block;padding:1%; width:50%">
 				<div class="form-inner">
 					<h6 style="color:black;">
 							<%out.print(temp.getText());%>
 					</h6>
 				</div>
-			</div><br>
-						<%}%></div>
-			
-
+			</div>
+			<br>
+						<%}%>
+		</div>	
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 
 		<div class="align-center">

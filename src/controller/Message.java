@@ -3,7 +3,9 @@ package controller;
 public final class Message {
 	public static final String MSG = "message";
 	public static final String INVALID_LOGIN = "Invalid Login";
-	public static final String VALID_LOGIN = "Valid Login";
+	public static final String VALID_LOGIN = "Login In";
+	public static final String LOGGED_OUT = "Logged Out";
+	public static final String ADDED_STATUS = "Added a new status";
 	public static final String ALREADY_USER_EXIST = "Email already exist !";
 	public static final String PASSWORD_MISMATCH = "Password mismatch !";
 	public static final String USERNAME = "username";

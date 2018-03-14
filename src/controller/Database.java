@@ -10,6 +10,9 @@ public class Database {
 	private static final String url = "jdbc:mysql://localhost:3306/users?"
 									+ "user=" +username
 									+ "&password=" +password;
+	private static final String audit_url = "jdbc:mysql://localhost:3306/data_audit?"
+		+ "user=" +username
+		+ "&password=" +password;
 	
 	private static Connection conn = null;
 	private static PreparedStatement pstatement = null;
@@ -27,7 +30,7 @@ public class Database {
 		}
 	}
 	
-	private static Connection getConnection(){
+	private static Connection getConnection(String url){
 		try{
 			return DriverManager.getConnection(url);
 		}catch(Exception e){
@@ -39,7 +42,7 @@ public class Database {
 	public static Boolean registerUser(User user){
 		try{
 			importJDBC();
-			conn = getConnection();
+			conn = getConnection(url);
 			queryString = "INSERT INTO user(username,email,password) VALUES (?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, user.getUsername());
@@ -58,7 +61,7 @@ public class Database {
 	public static User validateUser(User user){
 		try{
 			importJDBC();
-			conn = getConnection();
+			conn = getConnection(url);
 			pstatement = conn.prepareStatement("Select * from user where email=? and password=?");
 	        pstatement.setString(1, user.getEmail());
 	        pstatement.setString(2, user.getPassword());
@@ -82,7 +85,7 @@ public class Database {
 	public static Boolean addStatus(Status status){
 		try{
 			importJDBC();
-			conn = getConnection();
+			conn = getConnection(url);
 			queryString = "INSERT INTO status(username,email,text,datetime) VALUES (?,?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, status.getUsername());
@@ -103,7 +106,7 @@ public class Database {
 		ArrayList<Status> list = new ArrayList<Status>();
 		try{
 			importJDBC();
-			conn = getConnection();
+			conn = getConnection(url);
 			pstatement = conn.prepareStatement("Select * from status");
 	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
@@ -124,5 +127,25 @@ public class Database {
 				resultSet.getString(Message.EMAIL),
 				resultSet.getString(Message.TEXT),
 				resultSet.getString(Message.DATETIME));
+	}
+	
+	public static Boolean addLog(Log log){
+		try{
+			importJDBC();
+			conn = getConnection(audit_url);
+			queryString = "INSERT INTO log(level,classname,datetime,value) VALUES (?,?,?,?)";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, log.getLevel());
+        	pstatement.setString(2, log.getClassname());
+        	pstatement.setString(3, log.getDateTime()); 
+        	pstatement.setString(4, log.getValue()); 
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			System.out.print(e.toString());
+		}
+		return false;
 	}
 }

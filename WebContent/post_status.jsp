@@ -9,7 +9,7 @@
     if(!result){
     	session.setAttribute(Message.MSG,Message.ALREADY_USER_EXIST);
     }
-    
+    CustomLog.log("post_status","info",email +" - " + Message.ADDED_STATUS);
     response.sendRedirect("profile.jsp");
    
     
