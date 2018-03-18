@@ -11,6 +11,7 @@
 		session.removeAttribute(Message.MSG);
 		session.removeAttribute(Message.USERNAME);
 		session.removeAttribute(Message.EMAIL);
+		Database.putOffline(email);
 		CustomLog.log("logout",Message.LOG_INFO,email +" - " + Message.LOGGED_OUT);
 	}
 

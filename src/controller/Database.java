@@ -67,7 +67,9 @@ public class Database {
 	        pstatement.setString(2, user.getPassword());
 	        resultSet = pstatement.executeQuery();	   	 	
 	        if(resultSet.next()) {
-	   			return generateUser();
+	        	User temp = generateUser();
+	        	if(putOnline(temp))
+	        		return temp;
 	   	 	}   
 	        resultSet.close();
         	conn.close();
@@ -80,6 +82,13 @@ public class Database {
 	
 	private static User generateUser() throws SQLException{
 		return new User(resultSet.getString(Message.USERNAME),resultSet.getString(Message.EMAIL),resultSet.getString(Message.PASSWORD));
+	}
+	
+	private static User generateOnlineUser() throws SQLException{
+		User temp = new User();
+		temp.setUsername(resultSet.getString(Message.USERNAME));
+		temp.setEmail(resultSet.getString(Message.EMAIL));
+		return temp;
 	}
 	
 	public static Boolean addStatus(Status status){
@@ -126,6 +135,59 @@ public class Database {
 				resultSet.getString(Message.EMAIL),
 				resultSet.getString(Message.TEXT),
 				resultSet.getString(Message.DATETIME));
+	}
+	
+	private static Boolean putOnline(User user){
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			queryString = "INSERT INTO online(username,email) VALUES (?,?)";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, user.getUsername());
+        	pstatement.setString(2, user.getEmail()); 
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+		}
+		return false;
+	}
+	
+	public static Boolean putOffline(String email){
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			queryString = "DELETE FROM online WHERE email='"+email+"'";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+		}
+		return false;
+	}
+	
+	public static ArrayList<User> getAllOnline(){
+		ArrayList<User> list = new ArrayList<User>();
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			pstatement = conn.prepareStatement("Select * from online");
+	        resultSet = pstatement.executeQuery();
+	        while(resultSet.next()){
+	            list.add(generateOnlineUser());
+	         }
+	        resultSet.close();
+        	conn.close();
+	 		pstatement.close();
+		}catch(Exception e){
+			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+		}
+		return list;
 	}
 	
 	public static Boolean addLog(Log log){

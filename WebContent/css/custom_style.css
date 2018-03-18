@@ -16,7 +16,7 @@
 	padding:1% 5% 1% 5%;
 }
 .form-inner{
-	padding:2%;
+	padding:5%;
 	box-shadow: 2px 2px 2px 2px #888888;
 }
 
@@ -45,4 +45,10 @@
 
 .align-center{
 	text-align:center;	
+}
+
+
+.member-inner{
+	box-shadow: 2px 2px 2px 2px #888888;
+	text-align: center;
 }

@@ -71,20 +71,45 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-					<%
-						ArrayList<Status> feed = Database.getAllStatus();
-						for(Status temp:feed){
-							%>
-			<div style="display:inline-block;padding:1%; width:50%">
-				<div class="form-inner">
-					<h6 style="color:black;">
+			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;">
+					<% 
+						int count = 0;
+					   ArrayList<Status> feed = Database.getAllStatus();
+					   for(Status temp:feed){ 
+					   if(count==4)
+							break;
+					   else
+							count++;%>
+				<div class="form-outer">
+					<div class="form-inner">
+						<h4>
 							<%out.print(temp.getText());%>
-					</h6>
+						</h4>
+						<h6>
+							Posted by <%out.print(temp.getUsername());%> at <%out.print(temp.getDateTime());%>
+						</h6>
+					</div>
 				</div>
+			<br><%}%>
+			<div style="padding:5%;">
+				<form action="">
+					<input name="load_more_btn" style="width:100%;" type="submit" value="Load more"/>
+				</form>
 			</div>
-			<br>
-						<%}%>
-		</div>	
+			</div>	
+			
+		</div>
+		<div class="col-md-4">
+				<div class="member-inner">
+					<div style="width:100%;background:#3c465a;"><h4 style="padding:2%;">Members</h4></div>
+					<div>
+						<% ArrayList<User> members = Database.getAllOnline();
+						   for(User temp : members){	%>
+						   <h6 style="color:black;"><%out.print(temp.getUsername());%></h6>
+						   <%}%>
+					</div>
+				</div>
+		</div>
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 
 		<div class="align-center">
