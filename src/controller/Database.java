@@ -23,10 +23,10 @@ public class Database {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 		}catch(ClassNotFoundException e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class Database {
 		try{
 			return DriverManager.getConnection(url);
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 			return null;
 		}
 	}
@@ -53,12 +53,14 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
 	
 	public static User validateUser(User user){
+		User temp = null;
 		try{
 			importJDBC();
 			conn = getConnection(url);
@@ -67,17 +69,17 @@ public class Database {
 	        pstatement.setString(2, user.getPassword());
 	        resultSet = pstatement.executeQuery();	   	 	
 	        if(resultSet.next()) {
-	        	User temp = generateUser();
-	        	if(putOnline(temp))
-	        		return temp;
+	        	temp = generateUser();
 	   	 	}   
 	        resultSet.close();
         	conn.close();
 	 		pstatement.close();
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
-		return null;
+		putOnline(temp);
+    	return temp;
 	}
 	
 	private static User generateUser() throws SQLException{
@@ -106,7 +108,8 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
@@ -125,7 +128,8 @@ public class Database {
         	conn.close();
 	 		pstatement.close();
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();		
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return list;
 	}
@@ -150,7 +154,8 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
@@ -166,7 +171,8 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
@@ -185,7 +191,8 @@ public class Database {
         	conn.close();
 	 		pstatement.close();
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return list;
 	}
@@ -205,8 +212,16 @@ public class Database {
 	 		pstatement.close();
 	 		return true;
 		}catch(Exception e){
-			CustomLog.log(Database.class.toString(), Message.LOG_FATAL, e.toString());
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
 		return false;
 	}
+	
+	private static void clean(){
+		resultSet = null;
+		pstatement = null;
+		conn = null;
+	}
+	
 }

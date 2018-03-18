@@ -9,13 +9,13 @@
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 </head>
 
 <body>
 <% 
-	String username = (String)session.getAttribute(Message.USERNAME); 
-	if(username!=null){
+	Session.Init(request.getSession());
+	if(Session.isUserLogged()){
 	  response.sendRedirect("profile.jsp");
 	}
 %>
@@ -52,9 +52,9 @@
 	
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 
-		<center>
+		<div class="align-center">
 			Copyright &copy; Data-Audit. All Rights Reserved
-		</center>	
+		</div>	
 
 	</footer><!--end footer-->
 

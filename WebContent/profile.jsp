@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><%= session.getAttribute( Message.USERNAME ) %></title>
+	<title><% Session.Init(request.getSession());
+			  out.print(Session.getUsername()); %></title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
@@ -16,8 +17,7 @@
 
 <body>
 <% 
-	String username = (String)session.getAttribute(Message.USERNAME); 
-	if(username==null){
+	if(!Session.isUserLogged()){
 	  response.sendRedirect("login.jsp");
 	}
 %>

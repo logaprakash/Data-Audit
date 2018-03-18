@@ -21,4 +21,7 @@ public final class Message {
 	public static final String LOG_DEBUG = "DEBUG";
 	public static final String LOG_WARN = "WARN";
 	public static final String LOG_TRACE = "TRACE";
+	
+	//Class Name
+	public static final String DATABASE_CLASS = "Database class";
 }

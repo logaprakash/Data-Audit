@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 
 </head>
 
@@ -86,28 +87,28 @@
 		</div><!--end row-->		
 	
 	</div><!--end container-->
-<center>
+<div class="align-center">
 <h4 style="color:red;">
 <% 
-	String username = (String)session.getAttribute(Message.USERNAME); 
-	if(username!=null){
+	Session.Init(request.getSession());
+	if(Session.isUserLogged()){
 	  response.sendRedirect("profile.jsp");
 	}
-	String msg = (String)session.getAttribute(Message.MSG); 
-	if(msg!=null){
-	  out.print(msg);
-	  session.removeAttribute(Message.MSG);
+	String temp = Session.getMsg();
+	if(!temp.equals("")){
+	  out.print(temp);
+	  Session.removeMsg();
 	}
 %>
-</h4>
-</center>
+</h4></div>
+
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 		
 		<div class="container">
 
-			<center>
+			<div class="align-center">
 				Copyright &copy; Data-Audit. All Rights Reserved
-			</center>
+			</div>
 		
 		</div>		
 

@@ -8,9 +8,9 @@
 	String email = (String)session.getAttribute(Message.EMAIL);
 	
 	if(username!=null){
-		session.removeAttribute(Message.MSG);
-		session.removeAttribute(Message.USERNAME);
-		session.removeAttribute(Message.EMAIL);
+		Session.Init(request.getSession());
+		Session.clean();
+		Session.removeMsg();
 		Database.putOffline(email);
 		CustomLog.log("logout",Message.LOG_INFO,email +" - " + Message.LOGGED_OUT);
 	}
