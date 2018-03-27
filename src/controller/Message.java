@@ -13,6 +13,7 @@ public final class Message {
 	public static final String PASSWORD = "password";
 	public static final String TEXT = "text";
 	public static final String DATETIME = "datetime";
+	public static final String POST_COUNT = "post_count";
 	
 	//Log variable
 	public static final String LOG_INFO = "INFO";
@@ -24,4 +25,6 @@ public final class Message {
 	
 	//Class Name
 	public static final String DATABASE_CLASS = "Database class";
+	
+
 }

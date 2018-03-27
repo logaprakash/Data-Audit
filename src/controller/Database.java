@@ -4,6 +4,8 @@ import model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 public class Database {
 	private static final String username = "root";
 	private static final String password = "";
@@ -122,7 +124,7 @@ public class Database {
 			pstatement = conn.prepareStatement("Select * from status");
 	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
-	            list.add(generateStatus());
+	            list.add(0,generateStatus());
 	         }
 	        resultSet.close();
         	conn.close();
@@ -177,7 +179,7 @@ public class Database {
 		return false;
 	}
 	
-	public static ArrayList<User> getAllOnline(){
+	public static ArrayList<User> getAllOnline(HttpSession session){
 		ArrayList<User> list = new ArrayList<User>();
 		try{
 			importJDBC();
@@ -185,7 +187,10 @@ public class Database {
 			pstatement = conn.prepareStatement("Select * from online");
 	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
-	            list.add(generateOnlineUser());
+	        	User temp = generateOnlineUser();
+	        	Session.Init(session);
+	        	if(!temp.getEmail().equals(Session.getEmail()))
+	        			list.add(generateOnlineUser());
 	         }
 	        resultSet.close();
         	conn.close();

@@ -71,15 +71,15 @@
 			</div>
 		</div>
 		<div class="col-md-4">
-			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;">
+			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;overflow-y: auto;height:560px;">
 					<% 
-						int count = 0;
-					   ArrayList<Status> feed = Database.getAllStatus();
+						//int count = 0;
+					   	ArrayList<Status> feed = Database.getAllStatus();
 					   for(Status temp:feed){ 
-					   if(count==4)
-							break;
-					   else
-							count++;%>
+					   //if(count==4)
+							//break;
+					   //else
+							//count++;%>
 				<div class="form-outer">
 					<div class="form-inner">
 						<h4>
@@ -91,11 +91,11 @@
 					</div>
 				</div>
 			<br><%}%>
-			<div style="padding:5%;">
-				<form action="">
-					<input name="load_more_btn" style="width:100%;" type="submit" value="Load more"/>
+			<!-- <div style="padding:5%;">
+				<form method="post" action="load_more.jsp">
+					<input name="load_more_btn" style="width:100%;background:white;color:black;" type="submit" value="Load more"/>
 				</form>
-			</div>
+			</div> -->
 			</div>	
 			
 		</div>
@@ -103,7 +103,7 @@
 				<div class="member-inner">
 					<div style="width:100%;background:#3c465a;"><h4 style="padding:2%;">Members</h4></div>
 					<div>
-						<% ArrayList<User> members = Database.getAllOnline();
+						<% ArrayList<User> members = Database.getAllOnline(request.getSession());
 						   for(User temp : members){	%>
 						   <h6 style="color:black;"><%out.print(temp.getUsername());%></h6>
 						   <%}%>

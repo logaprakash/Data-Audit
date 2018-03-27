@@ -62,4 +62,17 @@ public class Session {
 		return "";
 	}
 	
+	public static void addCount(){
+		if(httpSession.getAttribute(Message.POST_COUNT)==null)
+			httpSession.setAttribute(Message.POST_COUNT,getCount());
+		else
+			httpSession.setAttribute(Message.POST_COUNT,getCount()+1);
+	}
+	public static int getCount(){
+		String temp = (String)httpSession.getAttribute(Message.POST_COUNT);
+		if(temp!=null)
+			return Integer.valueOf(temp);
+		return 0;
+	}
+	
 }

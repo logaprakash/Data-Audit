@@ -27,3 +27,288 @@
 2018-03-18 13:22:43 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
 2018-03-18 13:22:49 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
 2018-03-18 13:23:49 INFO  logout:14 - loga@gmail.com - Logged Out
+2018-03-26 18:20:29 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'logaprakash98@gmail.com' for key 'PRIMARY'
+2018-03-26 18:20:30 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-26 18:20:53 INFO  post_status:14 - logaprakash98@gmail.com - Added a new status
+2018-03-26 18:22:16 INFO  validate_user:14 - shivaj@gmail.com - Login In
+2018-03-26 18:22:31 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-03-26 18:23:51 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-26 18:25:39 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:41 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:43 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:45 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:47 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:49 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:52 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:54 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:56 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:25:58 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:00 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:02 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:04 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:06 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:08 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:10 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:12 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:14 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:16 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:18 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:20 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:22 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:24 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:26 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:28 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:30 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:32 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:34 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:36 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:39 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:41 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:43 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:45 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:47 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:49 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:51 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:53 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:55 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:57 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:26:59 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:01 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:03 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:05 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:07 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:09 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:11 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:13 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:15 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:17 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:19 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:21 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:24 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:26 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:28 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:30 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:32 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:34 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:36 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:38 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:40 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:42 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:44 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:46 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:48 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:50 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:52 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-03-26 18:27:54 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:54 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:54 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:55 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:56 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:27:57 FATAL Database class:22 - java.lang.NullPointerException
+2018-03-26 18:35:00 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-03-26 21:59:11 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-26 21:59:38 INFO  post_status:14 - logaprakash98@gmail.com - Added a new status
+2018-03-26 21:59:39 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-03-27 12:32:53 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-27 12:33:53 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-03-27 12:34:04 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-27 12:34:10 INFO  post_status:14 - logaprakash98@gmail.com - Added a new status
+2018-03-27 16:43:34 FATAL Database class:22 - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'logaprakash98@gmail.com' for key 'PRIMARY'
+2018-03-27 16:43:34 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-03-27 16:44:48 INFO  validate_user:14 - shivaj@gmail.com - Login In
+2018-03-27 16:57:21 INFO  post_status:14 - logaprakash98@gmail.com - Added a new status
+2018-03-27 16:57:36 INFO  post_status:14 - shivaj@gmail.com - Added a new status
+2018-03-27 16:57:44 INFO  logout:14 - shivaj@gmail.com - Logged Out
+2018-03-27 16:57:47 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
