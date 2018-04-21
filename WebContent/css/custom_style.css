@@ -46,9 +46,39 @@
 .align-center{
 	text-align:center;	
 }
-
-
+.member-outer{
+	box-shadow: 2px 2px 2px 2px #888888;
+	text-align: center;
+	overflow-y: auto;
+	height:150px;
+	padding:2%;
+	color: white;
+}
+.member-title{
+	width:100%;
+	background: #3c465a;
+}
 .member-inner{
 	box-shadow: 2px 2px 2px 2px #888888;
 	text-align: center;
+	color: black;
+	padding:2%;
+}
+.request-outer{
+	box-shadow: 2px 2px 2px 2px #888888;
+	text-align: center;
+	overflow-y: auto;
+	height:200px;
+	padding:2%;
+	color: white;
+}
+.request-inner{
+	box-shadow: 2px 2px 2px 2px #888888;
+	text-align: center;
+	color: black;
+	padding:2%;
+}
+.request-title{
+	width:100%;
+	background: #3c465a;
 }

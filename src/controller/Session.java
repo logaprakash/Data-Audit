@@ -20,6 +20,12 @@ public class Session {
 		if(!user.getUsername().equals("")){
 			httpSession.setAttribute(Message.USERNAME,user.getUsername());
 		}
+		if(!user.getCommunity_name().equals("")){
+			httpSession.setAttribute(Message.COMMUNITY_NAME,user.getCommunity_name());
+		}
+		if(!user.getRole().equals("")){
+			httpSession.setAttribute(Message.ROLE,user.getRole());
+		}
 	}
 	
 	public static void addMsg(String value){
@@ -55,13 +61,24 @@ public class Session {
 			return temp;
 		return "";
 	}
+	public static String getCommunity_name(){
+		String temp = (String)httpSession.getAttribute(Message.COMMUNITY_NAME);
+		if(temp!=null)
+			return temp;
+		return "";
+	}
 	public static String getMsg(){
 		String temp = (String)httpSession.getAttribute(Message.MSG);
 		if(temp!=null)
 			return temp;
 		return "";
 	}
-	
+	public static String getRole(){
+		String temp = (String)httpSession.getAttribute(Message.ROLE);
+		if(temp!=null)
+			return temp;
+		return "";
+	}
 	public static void addCount(){
 		if(httpSession.getAttribute(Message.POST_COUNT)==null)
 			httpSession.setAttribute(Message.POST_COUNT,getCount());
@@ -73,6 +90,14 @@ public class Session {
 		if(temp!=null)
 			return Integer.valueOf(temp);
 		return 0;
+	}
+	
+	public static User getSessionUser(){
+		User temp  = new User();
+		temp.setCommunity_name(getCommunity_name());
+		temp.setEmail(getEmail());
+		temp.setUsername(getUsername());
+		return temp;
 	}
 	
 }

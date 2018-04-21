@@ -9,28 +9,41 @@ public class Status {
 	private String email;
 	private String text;
 	private String dateTime;
+	private String community_name;
 	
 	public Status(){
 		this.username = "";
 		this.email = "";
 		this.text = "";  
+		this.community_name = "";
 		this.dateTime = getDate(); 
 	}
 	
-	public Status(String username,String email,String text){
+	public Status(String username,String email,String text,String community_name){
 		this.username = username;
 		this.email = email;
 		this.text = text;
+		this.community_name = community_name;
 		this.dateTime = getDate(); 
 	}
 	
-	public Status(String username,String email,String text,String dateTime){
+	public Status(String username,String email,String text,String dateTime,String community_name){
 		this.username = username;
 		this.email = email;
 		this.text = text;
+		this.community_name = community_name;
 		this.dateTime = dateTime; 
 	}
 	
+	
+	public String getCommunity_name() {
+		return community_name;
+	}
+
+	public void setCommunity_name(String community_name) {
+		this.community_name = community_name;
+	}
+
 	public String getUsername() {
 		return username;
 	}

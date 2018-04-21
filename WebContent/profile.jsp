@@ -55,6 +55,7 @@
 				<div class="profile-inner">
 						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
 						<h2 style="color:black;">Welcome, <%= session.getAttribute( Message.USERNAME ) %></h2>
+						<h4 style="color:black;">Community: <%= session.getAttribute( Message.COMMUNITY_NAME ) %></h4>
 						<h6 style="color:black;">Email: <%= session.getAttribute( Message.EMAIL ) %></h6>
 				</div>
 			</div>
@@ -74,7 +75,7 @@
 			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;overflow-y: auto;height:560px;">
 					<% 
 						//int count = 0;
-					   	ArrayList<Status> feed = Database.getAllStatus();
+					   	ArrayList<Status> feed = Database.getAllStatus(String.valueOf(Session.getCommunity_name()));
 					   for(Status temp:feed){ 
 					   //if(count==4)
 							//break;
@@ -100,15 +101,80 @@
 			
 		</div>
 		<div class="col-md-4">
-				<div class="member-inner">
-					<div style="width:100%;background:#3c465a;"><h4 style="padding:2%;">Members</h4></div>
-					<div>
-						<% ArrayList<User> members = Database.getAllOnline(request.getSession());
-						   for(User temp : members){	%>
-						   <h6 style="color:black;"><%out.print(temp.getUsername());%></h6>
-						   <%}%>
+				<div>
+					<div class="member-title"><h4 style="padding:2%;">Members</h4></div>
+					<div class="member-outer">
+					
+						<%
+						
+						ArrayList<User> members = Database.getAllOnline(Session.getSessionUser());
+						   for(User temp : members){%>
+						   
+						   <%
+							   if(temp.isOnline()){
+						%>
+						<div class="member-inner">
+						   <b style="color:green;"><%=temp.getUsername()+" - Online"%></b>
+						</div>
+							<%
+							}else if(temp.isApproved()){
+								%>
+						<div class="member-inner">
+							<b style="color:red;"><%=temp.getUsername()+" - Offline"%></b>
+						</div>
+							<%}%>
+						
+						
+						<%}%>
+					
+					
 					</div>
+					<br>
+					<center>
+					<form class="form-status">
+						<a href="profile.jsp"><input type="submit" name="refresh" value="Refresh" class="btn btn-primary"></a>
+					</form>
+					</center>
 				</div>
+				<br>
+				<%
+					if(Session.getRole().equals(Message.ROLE_ADMIN)){
+				%>
+				<div>
+				<div class="request-title"><h4 style="padding:2%;">Request</h4></div>
+					<div class="request-outer">
+					
+					
+					<% 
+					   	ArrayList<User> users = Database.getAllRequestInCommunity(Session.getCommunity_name());
+					   for(User temp:users){ 
+					 %>
+	
+					<div class="request-inner">
+						<h4>
+							<%out.print(temp.getUsername());%>
+						</h4>
+						<h6>
+							 Requested from <%out.print(temp.getEmail());%> to join at <%out.print(temp.getCommunity_name());%> Community
+						</h6>
+						<form action="request_control.jsp" method="POST">
+						<input type="hidden" value=<%=temp.getEmail()%> name="email" />
+						<input type="hidden" value=<%=temp.getCommunity_name()%> name="community_name" />
+						<input type="submit" name="accept" value="Accept" class="btn btn-primary">
+						<input type="submit" name="reject" value="reject" class="btn btn-primary">
+					</form>
+					</div>
+					
+				
+				
+			<%}%>
+					
+					
+				</div>
+					
+			</div>
+			<%} %>
+				
 		</div>
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 

@@ -45,11 +45,15 @@ public class Database {
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			queryString = "INSERT INTO user(username,email,password) VALUES (?,?,?)";
+			queryString = "INSERT INTO user(username,email,password,community_name,role,approved,online) VALUES (?,?,?,?,?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, user.getUsername());
         	pstatement.setString(2, user.getEmail());
-        	pstatement.setString(3, user.getPassword());   
+        	pstatement.setString(3, user.getPassword()); 
+        	pstatement.setString(4, user.getCommunity_name()); 
+        	pstatement.setString(5, user.getRole());
+        	pstatement.setBoolean(6,user.isApproved());
+        	pstatement.setBoolean(7,user.isOnline());
         	pstatement.executeUpdate();
         	conn.close();
 	 		pstatement.close();
@@ -66,9 +70,10 @@ public class Database {
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			pstatement = conn.prepareStatement("Select * from user where email=? and password=?");
+			pstatement = conn.prepareStatement("Select * from user where email=? and password=? and community_name=?");
 	        pstatement.setString(1, user.getEmail());
 	        pstatement.setString(2, user.getPassword());
+	        pstatement.setString(3, user.getCommunity_name());
 	        resultSet = pstatement.executeQuery();	   	 	
 	        if(resultSet.next()) {
 	        	temp = generateUser();
@@ -80,31 +85,32 @@ public class Database {
 			clean();
 			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
 		}
-		putOnline(temp);
     	return temp;
 	}
 	
 	private static User generateUser() throws SQLException{
-		return new User(resultSet.getString(Message.USERNAME),resultSet.getString(Message.EMAIL),resultSet.getString(Message.PASSWORD));
+		return new User(
+				resultSet.getString(Message.USERNAME),
+				resultSet.getString(Message.EMAIL),
+				resultSet.getString(Message.PASSWORD),
+				resultSet.getString(Message.COMMUNITY_NAME),
+				resultSet.getString(Message.ROLE),
+				resultSet.getBoolean(Message.APPROVED),
+				resultSet.getBoolean(Message.ONLINE));
 	}
 	
-	private static User generateOnlineUser() throws SQLException{
-		User temp = new User();
-		temp.setUsername(resultSet.getString(Message.USERNAME));
-		temp.setEmail(resultSet.getString(Message.EMAIL));
-		return temp;
-	}
 	
 	public static Boolean addStatus(Status status){
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			queryString = "INSERT INTO status(username,email,text,datetime) VALUES (?,?,?,?)";
+			queryString = "INSERT INTO status(username,email,text,datetime,community_name) VALUES (?,?,?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, status.getUsername());
         	pstatement.setString(2, status.getEmail());
         	pstatement.setString(3, status.getText()); 
         	pstatement.setString(4, (status.getDateTime()).toString()); 
+        	pstatement.setString(5, status.getCommunity_name()); 
         	pstatement.executeUpdate();
         	conn.close();
 	 		pstatement.close();
@@ -116,12 +122,13 @@ public class Database {
 		return false;
 	}
 	
-	public static ArrayList<Status> getAllStatus(){
+	public static ArrayList<Status> getAllStatus(String community_name){
 		ArrayList<Status> list = new ArrayList<Status>();
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			pstatement = conn.prepareStatement("Select * from status");
+			pstatement = conn.prepareStatement("SELECT * FROM status WHERE community_name=?");
+			pstatement.setString(1,community_name);
 	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
 	            list.add(0,generateStatus());
@@ -140,17 +147,19 @@ public class Database {
 		return new Status(resultSet.getString(Message.USERNAME),
 				resultSet.getString(Message.EMAIL),
 				resultSet.getString(Message.TEXT),
-				resultSet.getString(Message.DATETIME));
+				resultSet.getString(Message.DATETIME),
+				resultSet.getString(Message.COMMUNITY_NAME));
 	}
 	
-	private static Boolean putOnline(User user){
+	public static Boolean setOnline(User user){
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			queryString = "INSERT INTO online(username,email) VALUES (?,?)";
+			queryString = "UPDATE user SET online = ? WHERE email = ? and community_name = ?";
         	pstatement = conn.prepareStatement(queryString);
-        	pstatement.setString(1, user.getUsername());
+        	pstatement.setBoolean(1, user.isOnline());
         	pstatement.setString(2, user.getEmail()); 
+        	pstatement.setString(3, user.getCommunity_name()); 
         	pstatement.executeUpdate();
         	conn.close();
 	 		pstatement.close();
@@ -162,35 +171,19 @@ public class Database {
 		return false;
 	}
 	
-	public static Boolean putOffline(String email){
-		try{
-			importJDBC();
-			conn = getConnection(url);
-			queryString = "DELETE FROM online WHERE email='"+email+"'";
-        	pstatement = conn.prepareStatement(queryString);
-        	pstatement.executeUpdate();
-        	conn.close();
-	 		pstatement.close();
-	 		return true;
-		}catch(Exception e){
-			clean();
-			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
-		}
-		return false;
-	}
 	
-	public static ArrayList<User> getAllOnline(HttpSession session){
+	public static ArrayList<User> getAllOnline(User user){
 		ArrayList<User> list = new ArrayList<User>();
 		try{
 			importJDBC();
 			conn = getConnection(url);
-			pstatement = conn.prepareStatement("Select * from online");
+			pstatement = conn.prepareStatement("Select * from user WHERE community_name=?");
+			pstatement.setString(1,user.getCommunity_name());
 	        resultSet = pstatement.executeQuery();
 	        while(resultSet.next()){
-	        	User temp = generateOnlineUser();
-	        	Session.Init(session);
-	        	if(!temp.getEmail().equals(Session.getEmail()))
-	        			list.add(generateOnlineUser());
+	        	User temp = generateUser();
+	        	if(!temp.getEmail().equals(user.getEmail()))
+	        			list.add(temp);
 	         }
 	        resultSet.close();
         	conn.close();
@@ -222,6 +215,91 @@ public class Database {
 		}
 		return false;
 	}
+	public static Boolean registerCommunity(Community community){
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			queryString = "INSERT INTO community(datetime,community_name,creater_username,creater_email) VALUES (?,?,?,?)";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, community.getDateTime());
+        	pstatement.setString(2, community.getName());
+        	pstatement.setString(3, community.getUser().getUsername());
+        	pstatement.setString(4, community.getUser().getEmail());
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
+		}
+		return false;
+	}
+	public static ArrayList<User> getAllRequestInCommunity(String community_name){
+			ArrayList<User> list = new ArrayList<User>();
+			try{
+				importJDBC();
+				conn = getConnection(url);
+				pstatement = conn.prepareStatement("Select * from user where community_name=? and approved = ?");
+				pstatement.setString(1, community_name);
+				pstatement.setBoolean(2,false);
+		        resultSet = pstatement.executeQuery();
+		        while(resultSet.next()){
+		        	list.add(generateUser());
+		         }
+		        resultSet.close();
+	        	conn.close();
+		 		pstatement.close();
+			}catch(Exception e){
+				clean();
+				CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
+			}
+			return list;
+		
+	}
+	public static ArrayList<Community> getAllCommunity(HttpSession session){
+		ArrayList<Community> list = new ArrayList<Community>();
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			pstatement = conn.prepareStatement("Select * from community");
+	        resultSet = pstatement.executeQuery();
+	        while(resultSet.next()){
+	        	list.add(generateCommunity());
+	         }
+	        resultSet.close();
+        	conn.close();
+	 		pstatement.close();
+		}catch(Exception e){
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
+		}
+		return list;
+	}
+	private static Community generateCommunity() throws SQLException{
+		return new Community(resultSet.getString(Message.COMMUNITY_NAME),resultSet.getString(Message.CREATER_USERNAME),resultSet.getString(Message.CREATER_EMAIL),resultSet.getString(Message.DATETIME));
+	}
+	
+	public static Boolean setApproved(User user){
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			queryString = "UPDATE user SET approved = ? WHERE email = ? and community_name = ?";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setBoolean(1, user.isApproved());
+        	pstatement.setString(2, user.getEmail()); 
+        	pstatement.setString(3, user.getCommunity_name()); 
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
+		}
+		return false;
+	}
+	
 	
 	private static void clean(){
 		resultSet = null;

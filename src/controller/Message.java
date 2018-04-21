@@ -10,10 +10,21 @@ public final class Message {
 	public static final String PASSWORD_MISMATCH = "Password mismatch !";
 	public static final String USERNAME = "username";
 	public static final String EMAIL = "email";
+	public static final String COMMUNITY_NAME = "community_name";
+	public static final String COMMUNITY_ID = "id";
+	public static final String CREATER_USERNAME = "creater_username";
+	public static final String CREATER_EMAIL = "creater_email";
 	public static final String PASSWORD = "password";
 	public static final String TEXT = "text";
 	public static final String DATETIME = "datetime";
 	public static final String POST_COUNT = "post_count";
+	public static final String APPROVED = "approved";
+	public static final String ROLE = "role";
+	public static final String ROLE_ADMIN = "admin";
+	public static final String ROLE_MEMBER = "member";
+	public static final String NOT_APPROVED = " not approved in ";
+	public static final String INFO_NOT_APPROVED = "Your join request is still pending !";
+	public static final String ONLINE = "online";
 	
 	//Log variable
 	public static final String LOG_INFO = "INFO";
