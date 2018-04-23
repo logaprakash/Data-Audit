@@ -20,7 +20,7 @@
 
 	<header>
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-fixed-top">
 			
 			<div class="container">
 				
@@ -37,9 +37,9 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="create_community.jsp"><span class="glyphicon glyphicon-user"></span> Create Community </a></li>
-						<li><a href="join_community.jsp	"><span class="glyphicon glyphicon-plus"></span> Join Community </a></li>
-						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+						<li><a href="create_community.jsp" class="custom-font"><span class="glyphicon glyphicon-user"></span> Create Community </a></li>
+						<li><a href="join_community.jsp	" class="custom-font"><span class="glyphicon glyphicon-plus"></span> Join Community </a></li>
+						<li><a href="login.jsp" class="custom-font"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
 					</ul>				
 				</div>
 
