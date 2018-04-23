@@ -38,8 +38,8 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="signup.jsp" class="custom-font"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+						<li><a href="login.jsp" class="custom-font"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>				
 				</div>
 
@@ -48,7 +48,27 @@
 		</nav><!--end nav-->
 
 	</header><!--end header-->
-
+	<div class="container-fluid">
+		
+			<div class="row">
+			
+				<div class="col-sm-offset-4 col-md-offset-4 col-sm-4 col-md-4">
+				
+					<div class="custom-margin">
+					
+						<center>
+						
+							<img src="assets/logo.jpg" alt="logo">
+							
+						</center>
+						
+					</div>
+					
+				</div>
+				<div class="col-sm-4 col-md-4"></div>
+			</div>
+				
+	</div>
 	
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 

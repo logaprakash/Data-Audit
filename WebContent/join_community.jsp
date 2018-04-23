@@ -20,7 +20,7 @@
 
 	<header>
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-fixed-top">
 			
 			<div class="container">
 				
@@ -37,9 +37,9 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="create_community.jsp"><span class="glyphicon glyphicon-user"></span> Create Community </a></li>
-						<li><a href="join_community.jsp	"><span class="glyphicon glyphicon-plus"></span> Join Community </a></li>
-						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+						<li><a href="create_community.jsp" class="custom-font"><span class="glyphicon glyphicon-user"></span> Create Community </a></li>
+						<li><a href="join_community.jsp	" class="custom-font"><span class="glyphicon glyphicon-plus"></span> Join Community </a></li>
+						<li><a href="login.jsp" class="custom-font"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
 					</ul>				
 				</div>
 
@@ -54,7 +54,7 @@
 		<div class="row"><!--start row-->
 
 			<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><!--start cols-->
-
+			<div class="card card-1">
 				<form method="post" action="send_join_request.jsp"><!--start form-->
 
 					<h2 class="form-heading">Join a community</h2>
@@ -89,6 +89,7 @@
 
 				end form-->	
 				</form>
+			</div>	
 			</div><!--end cols-->
 		
 		</div><!--end row-->		
