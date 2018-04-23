@@ -50,7 +50,7 @@
 
 	</header><!--end header-->
 
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="profile-outer">
 				<div class="profile-inner">
 						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
@@ -71,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-6">
 			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;overflow-y: auto;height:560px;">
 					<% 
 						//int count = 0;
@@ -100,7 +100,7 @@
 			</div>	
 			
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 				<div>
 					<div class="member-title"><h4 style="padding:2%;">Members</h4></div>
 					<div class="member-outer">
@@ -176,7 +176,7 @@
 			<%} %>
 				
 		</div>
-	<footer class="footer navbar-fixed-bottom"><!--start footer-->
+	<!--  -->footer class="footer navbar-fixed-bottom"><!--start footer-->
 
 		<div class="align-center">
 			Copyright &copy; Data-Audit. All Rights Reserved

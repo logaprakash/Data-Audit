@@ -1,4 +1,7 @@
 package model;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class User {
 	
@@ -22,7 +25,7 @@ public class User {
 	
 	public User(String email,String password){
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.username = "";
 		this.community_name = "";
 		this.role = "";
@@ -33,7 +36,7 @@ public class User {
 	public User(String username,String email,String password){
 		this.username = username;
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.community_name = "";
 		this.role = "";
 		this.isApproved = false;
@@ -42,7 +45,7 @@ public class User {
 	public User(String username,String email,String password,String community_name){
 		this.username = username;
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.community_name = community_name;
 		this.role = "";
 		this.isApproved = false;
@@ -51,7 +54,7 @@ public class User {
 	public User(String username,String email,String password,String community_name,String role){
 		this.username = username;
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.community_name = community_name;
 		this.role = role;
 		this.isApproved = false;
@@ -60,7 +63,7 @@ public class User {
 	public User(String username,String email,String password,String community_name,String role,boolean approved){
 		this.username = username;
 		this.email = email;
-		this.password = password;
+		this.password =encrpt(password);
 		this.community_name = community_name;
 		this.role = role;
 		this.isApproved = approved;
@@ -69,7 +72,7 @@ public class User {
 	public User(String username,String email,String password,String community_name,String role,boolean approved,boolean online){
 		this.username = username;
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.community_name = community_name;
 		this.role = role;
 		this.isApproved = approved;
@@ -132,5 +135,20 @@ public class User {
 		this.password = password;
 	}
 	
+	private String encrpt(String temp){
+	
+		MessageDigest messageDigest;
+		try {
+			messageDigest = MessageDigest.getInstance("SHA-256");
+			messageDigest.update(temp.getBytes());
+			String encryptedString = new String(messageDigest.digest());
+			return encryptedString;
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return temp;
+		}
+		
+	}
 	
 }
