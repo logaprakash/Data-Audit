@@ -199,12 +199,14 @@ public class Database {
 		try{
 			importJDBC();
 			conn = getConnection(audit_url);
-			queryString = "INSERT INTO log(level,classname,datetime,value) VALUES (?,?,?,?)";
+			queryString = "INSERT INTO log(level,classname,datetime,value,host_address,host_name) VALUES (?,?,?,?,?,?)";
         	pstatement = conn.prepareStatement(queryString);
         	pstatement.setString(1, log.getLevel());
         	pstatement.setString(2, log.getClassname());
         	pstatement.setString(3, log.getDateTime()); 
         	pstatement.setString(4, log.getValue()); 
+        	pstatement.setString(5, log.getHostAddress());
+        	pstatement.setString(6,log.getHostName());
         	pstatement.executeUpdate();
         	conn.close();
 	 		pstatement.close();

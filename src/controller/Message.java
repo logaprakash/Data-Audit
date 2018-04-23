@@ -19,10 +19,14 @@ public final class Message {
 	public static final String DATETIME = "datetime";
 	public static final String POST_COUNT = "post_count";
 	public static final String APPROVED = "approved";
+	public static final String REJECTED = "rejected";
+	public static final String COMMUNITY_CREATED = "community created";
+	public static final String COMMUNITY_REQUESTED = "community request";
+	public static final String USER_UNAVAILABLE = "User is not in this community";
 	public static final String ROLE = "role";
 	public static final String ROLE_ADMIN = "admin";
 	public static final String ROLE_MEMBER = "member";
-	public static final String NOT_APPROVED = " not approved in ";
+	public static final String NOT_APPROVED = "not approved";
 	public static final String INFO_NOT_APPROVED = "Your join request is still pending !";
 	public static final String ONLINE = "online";
 	

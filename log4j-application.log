@@ -5141,3 +5141,28 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2018-04-21 00:11:03 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
 2018-04-21 00:11:11 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
 2018-04-21 00:11:24 INFO  validate_user:14 - sample@gmail.com - Login In
+2018-04-23 13:16:08 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-04-23 13:16:15 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-04-23 13:16:22 INFO  validate_user:14 - shivaj@gmail.com - Login In
+2018-04-23 13:16:26 INFO  logout:14 - shivaj@gmail.com - Logged Out
+2018-04-23 13:16:37 INFO  validate_user:14 - logaprakash98@gmail.com - Login In
+2018-04-23 13:20:55 INFO  logout:14 - logaprakash98@gmail.com - Logged Out
+2018-04-23 15:23:02 INFO  validate_user:14 - loga@gmail.comatmedia - Login In
+2018-04-23 15:23:09 INFO  logout:14 - loga@gmail.com - Logged Out
+2018-04-23 15:23:55 INFO  validate_user:14 - deepika@gmail.comatmedia - not approved
+2018-04-23 15:24:07 INFO  validate_user:14 - loga@gmail.comatmedia - Login In
+2018-04-23 15:24:16 INFO  logout:14 - loga@gmail.com - Logged Out
+2018-04-23 15:24:26 INFO  validate_user:14 - deepika@gmail.comatmedia - Login In
+2018-04-23 16:03:37 WARN  validate_user:21 - logaprakash98@gmail.com at media - user is not in this community
+2018-04-23 16:04:37 WARN  validate_user:21 - logaprakash98@gmail.com at media - User is not in this community
+2018-04-23 16:04:53 INFO  validate_user:15 - logaprakash98@gmail.com at NIIT - Login In 192.168.86.49
+2018-04-23 16:04:58 INFO  request_control:15 - sample1@gmail.com at NIIT - rejected 192.168.86.49
+2018-04-23 16:05:03 INFO  request_control:15 - join@gmail.com at NIIT - approved 192.168.86.49
+2018-04-23 16:05:24 INFO  post_status:15 - logaprakash98@gmail.com - Added a new status 192.168.86.49
+2018-04-23 16:05:32 INFO  logout:15 - logaprakash98@gmail.com - Logged Out 192.168.86.49
+2018-04-23 16:25:18 INFO  validate_user:15 - logaprakash98@gmail.com at NIIT - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 16:25:30 INFO  logout:15 - logaprakash98@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 16:28:56 INFO  validate_user:15 - deepika@gmail.com at NIIT - community request :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 16:29:18 INFO  validate_user:21 - deepika@gmail.com at NIIT - not approved :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 16:29:28 INFO  validate_user:15 - logaprakash98@gmail.com at NIIT - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 16:32:06 INFO  logout:15 - logaprakash98@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337

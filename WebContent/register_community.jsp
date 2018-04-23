@@ -14,10 +14,12 @@
     	 	if(result){
     	 		result = Database.registerCommunity(new Community(community,username,email));
         		response.sendRedirect("login.jsp");
+        		CustomLog.log("validate_user",Message.LOG_INFO,email+" at " +community +" - "+Message.COMMUNITY_CREATED);
    			}
         	else{  
    				session.setAttribute(Message.MSG,Message.ALREADY_USER_EXIST);
-   				response.sendRedirect("create_community.jsp");   
+   				response.sendRedirect("create_community.jsp");  
+   				CustomLog.log("validate_user",Message.LOG_WARN,email+" at " + community+" - "+Message.ALREADY_USER_EXIST);
    			}    
     	 	
     	}

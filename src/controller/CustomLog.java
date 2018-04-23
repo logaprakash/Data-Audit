@@ -10,20 +10,21 @@ public class CustomLog {
 	
 	public static void log(String classname,String level,String log){
 		logger = Logger.getLogger(classname);
+		Log temp = new Log(classname,level,log);
 		if(level.equals(Message.LOG_INFO))
-			logger.info(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		else if(level.equals(Message.LOG_DEBUG))
-			logger.debug(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		else if(level.equals(Message.LOG_ERROR))
-			logger.error(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		else if(level.equals(Message.LOG_WARN))
-			logger.warn(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		else if(level.equals(Message.LOG_FATAL))
-			logger.fatal(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		else if(level.equals(Message.LOG_TRACE))
-			logger.trace(log);
+			logger.info(log+" :: "+temp.getHostAddress()+ " :: " + temp.getHostName());
 		
-		Database.addLog(new Log(classname,level,log));
+		Database.addLog(temp);
 	}
 	
 }

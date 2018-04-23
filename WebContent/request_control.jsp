@@ -14,8 +14,10 @@
 	if(accept!=null){
 		temp.setApproved(true);
 		Database.setApproved(temp);
+		CustomLog.log("request_control",Message.LOG_INFO,email+" at " + community_name+" - "+Message.APPROVED);
 	}else{
 		Database.rejectRequest(temp);
+		CustomLog.log("request_control",Message.LOG_INFO,email+" at " + community_name+" - "+Message.REJECTED);
 	}
 	response.sendRedirect("profile.jsp");
 %>

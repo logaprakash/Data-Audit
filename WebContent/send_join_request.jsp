@@ -13,10 +13,12 @@
         
     	 	if(result){
         		response.sendRedirect("login.jsp");
+        		CustomLog.log("validate_user",Message.LOG_INFO,email+" at " +community +" - "+Message.COMMUNITY_REQUESTED);
    			}
         	else{  
    				session.setAttribute(Message.MSG,Message.ALREADY_USER_EXIST);
-   				response.sendRedirect("join_community.jsp");   
+   				response.sendRedirect("join_community.jsp");  
+   				CustomLog.log("validate_user",Message.LOG_WARN,email+" at " + community+" - "+Message.ALREADY_USER_EXIST);
    			}    
     	 	
     	}

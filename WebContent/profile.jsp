@@ -136,7 +136,7 @@
 					</form>
 					</center>
 				</div>
-				<br>
+				
 				<%
 					if(Session.getRole().equals(Message.ROLE_ADMIN)){
 				%>

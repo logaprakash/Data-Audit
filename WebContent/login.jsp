@@ -36,8 +36,9 @@
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="signup.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+						<li><a href="create_community.jsp"><span class="glyphicon glyphicon-user"></span> Create Community </a></li>
+						<li><a href="join_community.jsp	"><span class="glyphicon glyphicon-plus"></span> Join Community </a></li>
+						<li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
 					</ul>				
 				</div>
 
@@ -73,17 +74,18 @@
 								<input type="password" name="password" placeholder="Password" class="form-control">
 							</div>	
 							<div class="form-group">
-								<select id = "community" name="community">
+								<select id = "community" name="community" style="color: black;">
 								<%
 									ArrayList<Community> list = Database.getAllCommunity(request.getSession());
 									for(Community temp:list){%>
-              						<option value = <%=temp.getName() %>><%=temp.getName() %></option>
+              						<option value ="<%out.print(temp.getName()); %>" style="color: black;"><%=temp.getName() %></option>
               						<%} %>
               				
              					</select>
-							</div>		
-							<input type="submit" name="submit" value="Submit" class="btn btn-primary">
-
+							</div>	
+							<div class="form-group">	
+								<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+							</div>
 						</form><!--end form-->	
 					
 					</div>
