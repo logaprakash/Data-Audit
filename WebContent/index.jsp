@@ -48,7 +48,27 @@
 		</nav><!--end nav-->
 
 	</header><!--end header-->
-
+	<div class="container-fluid">
+		
+			<div class="row">
+			
+				<div class="col-sm-offset-4 col-md-offset-4 col-sm-4 col-md-4">
+				
+					<div class="custom-margin">
+					
+						<center>
+						
+							<img src="assets/logo.jpg" alt="logo">
+							
+						</center>
+						
+					</div>
+					
+				</div>
+				<div class="col-sm-4 col-md-4"></div>
+			</div>
+				
+	</div>
 	
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 

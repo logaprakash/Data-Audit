@@ -54,7 +54,7 @@
 		<div class="row"><!--start row-->
 
 			<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><!--start cols-->
-
+			<div class="card card-1">
 				<form method="post" action="send_join_request.jsp"><!--start form-->
 
 					<h2 class="form-heading">Join a community</h2>
@@ -89,6 +89,7 @@
 
 				end form-->	
 				</form>
+			</div>	
 			</div><!--end cols-->
 		
 		</div><!--end row-->		
