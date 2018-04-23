@@ -5178,3 +5178,4 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2018-04-23 17:28:47 INFO  validate_user:15 - logaprakash98@gmail.com at test - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
 2018-04-23 17:28:58 INFO  post_status:15 - shraddha@gmail.com - Added a new status :: 192.168.86.49 :: Logaprakash_ug2_1337
 2018-04-23 17:29:32 INFO  logout:15 - shraddha@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-23 18:12:47 INFO  validate_user:21 - logaprakash98@gmail.com at media - User is not in this community :: 192.168.86.49 :: Logaprakash_ug2_1337
