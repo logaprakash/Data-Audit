@@ -14,6 +14,8 @@
 	if(accept!=null){
 		temp.setApproved(true);
 		Database.setApproved(temp);
+	}else{
+		Database.rejectRequest(temp);
 	}
 	response.sendRedirect("profile.jsp");
 %>

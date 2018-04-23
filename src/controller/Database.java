@@ -300,7 +300,24 @@ public class Database {
 		return false;
 	}
 	
-	
+	public static Boolean rejectRequest(User user){
+		try{
+			importJDBC();
+			conn = getConnection(url);
+			queryString = "DELETE FROM user WHERE email=? and community_name=?";
+        	pstatement = conn.prepareStatement(queryString);
+        	pstatement.setString(1, user.getEmail());
+        	pstatement.setString(2, user.getCommunity_name());
+        	pstatement.executeUpdate();
+        	conn.close();
+	 		pstatement.close();
+	 		return true;
+		}catch(Exception e){
+			clean();
+			CustomLog.log(Message.DATABASE_CLASS, Message.LOG_FATAL, e.toString());
+		}
+		return false;
+	}
 	private static void clean(){
 		resultSet = null;
 		pstatement = null;
