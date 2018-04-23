@@ -15,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="css/custom_style.css">
 </head>
 
-<body>
+<body style="background:#e6ecf0;">
 <% 
 	if(!Session.isUserLogged()){
 	  response.sendRedirect("login.jsp");
@@ -23,7 +23,7 @@
 %>
 	<header><!--start header-->
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
+		<nav class="navbar navbar-fixed-top" style="background:#3c465a;"><!--start nav-->
 			
 			<div class="container">
 				
@@ -35,7 +35,7 @@
 							<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="index.jsp">Mini-Media</a>
+					<a style ="color:white;" class="navbar-brand" href="index.jsp">Mini-Media</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -50,7 +50,7 @@
 
 	</header><!--end header-->
 
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="profile-outer">
 				<div class="profile-inner">
 						<img style="border-radius:50%;height:100px;weight:100px;" src="assets/profile.png"/>	
@@ -63,16 +63,21 @@
 			<div>
 				<div class="form-outer">
 					<div class="form-inner">
-						<form class="form-status" action="post_status.jsp" method="post">				
-							<Textarea name="status_input" class="form-status-textbox" cols="5" rows="5" placeholder="Enter somthing here ..."></Textarea>
+						<form class="form-status" action="post_status.jsp" method="post">	
+						<div class="form-group">			
+							<Textarea class="status-textarea" name="status_input" class="form-status-textbox" cols="2" rows="2" placeholder="What's on your mind ..."></Textarea>
+						</div>
+						<div class="form-group">
 							<input name="status_btn" class="form-status-btn" type="submit" value="Post"/>
+						</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
-			<div style="padding-top:10%;padding-bottom:15%;background:#3c465a;overflow-y: auto;height:560px;">
+		<div class="col-md-6">
+		<div class="status-title"><h4 style="padding:2%;">Community Feed</h4></div>
+			<div class="status">
 					<% 
 						//int count = 0;
 					   	ArrayList<Status> feed = Database.getAllStatus(String.valueOf(Session.getCommunity_name()));
@@ -82,11 +87,11 @@
 					   //else
 							//count++;%>
 				<div class="form-outer">
-					<div class="form-inner">
-						<h4>
+					<div class="status-inner">
+						<h4 style="color:#3c465a;">
 							<%out.print(temp.getText());%>
 						</h4>
-						<h6>
+						<h6 style="color:grey;">
 							Posted by <%out.print(temp.getUsername());%> at <%out.print(temp.getDateTime());%>
 						</h6>
 					</div>
@@ -100,7 +105,7 @@
 			</div>	
 			
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 				<div>
 					<div class="member-title"><h4 style="padding:2%;">Members</h4></div>
 					<div class="member-outer">
@@ -129,10 +134,10 @@
 					
 					
 					</div>
-					<br>
+					
 					<center>
 					<form class="form-status">
-						<a href="profile.jsp"><input type="submit" name="refresh" value="Refresh" class="btn btn-primary"></a>
+						<a href="profile.jsp"><input  type="submit" name="refresh" value="Refresh" class="request-btn"></a>
 					</form>
 					</center>
 				</div>
@@ -160,8 +165,8 @@
 						<form action="request_control.jsp" method="POST">
 						<input type="hidden" value=<%=temp.getEmail()%> name="email" />
 						<input type="hidden" value=<%=temp.getCommunity_name()%> name="community_name" />
-						<input type="submit" name="accept" value="Accept" class="btn btn-primary">
-						<input type="submit" name="reject" value="reject" class="btn btn-primary">
+						<input type="submit" name="accept" value="Accept" class="accept-btn">
+						<input type="submit" name="reject" value="Reject" class="reject-btn">
 					</form>
 					</div>
 					
@@ -176,13 +181,7 @@
 			<%} %>
 				
 		</div>
-	<footer class="footer navbar-fixed-bottom"><!--start footer-->
-
-		<div class="align-center">
-			Copyright &copy; Data-Audit. All Rights Reserved
-		</div>	
-
-	</footer><!--end footer-->
+	
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

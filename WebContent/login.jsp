@@ -15,11 +15,11 @@
 
 </head>
 
-<body>
+<body style="background:#e6ecf0;color:#3c465a;margin-top:110px;">
 
 	<header><!--start header-->
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
+		<nav class="navbar navbar-fixed-top" style="background:#3c465a;"><!--start nav-->
 			
 			<div class="container">
 				
@@ -31,7 +31,7 @@
 							<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="index.jsp">Mini-Media</a>
+					<a class="navbar-brand custom-index-font" href="index.jsp">Mini-Media</a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="myNavbar">
@@ -55,14 +55,11 @@
 
 			<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4"><!--start cols-->
 
-				<div class="panel panel-primary"><!--start panel-->
+				
 					
-					<div class="panel-heading">
-						<h3>Login Form</h3>
-					</div>
-					<div class="panel-body">
+					<div class="card card-1" style="padding:5%;">
+						<h2 style="padding-bottom:5%;">Login</h2>
 
-						<p class="text-warning">Login to your account</p>
 
 						<form method="post" action="validate_user.jsp"><!--start form-->
 
@@ -73,8 +70,10 @@
 							<div class="form-group">
 								<input type="password" name="password" placeholder="Password" class="form-control">
 							</div>	
+							
 							<div class="form-group">
-								<select id = "community" name="community" style="color: black;">
+					
+								<select id = "community" name="community" class="dropdown-custom">
 								<%
 									ArrayList<Community> list = Database.getAllCommunity(request.getSession());
 									for(Community temp:list){%>
@@ -82,20 +81,20 @@
               						<%} %>
               				
              					</select>
-							</div>	
+								
+							</div>
 							<div class="form-group">	
-								<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+								<input type="submit" name="submit" value="Submit" class="request-btn">
 							</div>
 						</form><!--end form-->	
 					
-					</div>
+					
 
-					<div class="panel-footer">
-						<p>Join an community?<a href="join_community.jsp">Join Community</a></p>
-						<p>Create an new community?<a href="create_community.jsp">Create Community</a></p>
-					</div>
-
-				</div><!--end panel-->
+					
+						<p>Join a community?<a href="join_community.jsp">Join Community</a></p>
+						<p>Create a community?<a href="create_community.jsp">Create Community</a></p>
+				</div>
+			
 			
 			</div><!--end cols-->
 		
@@ -117,17 +116,7 @@
 %>
 </h4></div>
 
-	<footer class="footer navbar-fixed-bottom"><!--start footer-->
-		
-		<div class="container">
-
-			<div class="align-center">
-				Copyright &copy; Data-Audit. All Rights Reserved
-			</div>
-		
-		</div>		
-
-	</footer><!--end footer-->
+	
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

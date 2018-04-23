@@ -1,11 +1,15 @@
 .profile-outer{
 	padding:5%;
 	width:100%;
+	
 	display: inline-block;	
 }
 
 .profile-inner{
 	padding:2%;
+	background:white;
+	border-radius:15px;
+	font-family:Segoe UI;
 	box-shadow: 2px 2px 2px 2px #888888;
 	text-align: center;
 }
@@ -17,11 +21,14 @@
 }
 .form-inner{
 	padding:5%;
+	background:white;
+	border-radius:15px;
+	color: black;
 	box-shadow: 2px 2px 2px 2px #888888;
 }
 
 .form-status {
-	color: #000;
+	color: black;
 	font-weight: bold;
 }
 
@@ -38,7 +45,8 @@
 	margin-top:1%;
 	width:30%;
 	height:50%;
-	background: #3c465a;
+	background: #48AAE6;
+	border-radius:15px;
 	color: #ffffff;
 	border: none;
 }
@@ -50,17 +58,23 @@
 	box-shadow: 2px 2px 2px 2px #888888;
 	text-align: center;
 	overflow-y: auto;
+	border-radius:15px;
+	background:white;
 	height:150px;
 	padding:2%;
 	color: white;
 }
 .member-title{
 	width:100%;
+	border-radius:15px;
+	text-align:center;
 	background: #3c465a;
 }
 .member-inner{
-	box-shadow: 2px 2px 2px 2px #888888;
+	margin:2%;
 	text-align: center;
+	background:#e6ecf0;
+	border-radius:15px;
 	color: black;
 	padding:2%;
 }
@@ -68,17 +82,97 @@
 	box-shadow: 2px 2px 2px 2px #888888;
 	text-align: center;
 	overflow-y: auto;
+	background:white;
+	border-radius:15px;
+	font-family:Segoe UI;
 	height:200px;
 	padding:2%;
-	color: white;
 }
 .request-inner{
-	box-shadow: 2px 2px 2px 2px #888888;
+	margin:2%;
 	text-align: center;
-	color: black;
+	border-radius:15px;
+	background:#e6ecf0;
+	color: #3c465a;
 	padding:2%;
 }
 .request-title{
+	font-family:Segoe UI;
+	margin-top:10%;
+	border-radius:15px;
 	width:100%;
+	text-align:center;
 	background: #3c465a;
+}
+
+.status{
+	font-family:Segoe UI;
+	padding-bottom:5%;
+	background: #e6ecf0;
+	overflow-y: auto;
+	height:100%;
+}
+.request-btn{
+	margin-top:5%;
+	padding: 1%;
+	width:30%;
+	height:50%;
+	background: #48AAE6;
+	border-radius:15px;
+	color: #ffffff;
+	border: none;
+}
+.accept-btn{
+	margin-top:5%;
+	padding: 1%;
+	width:30%;
+	height:50%;
+	background: green;
+	border-radius:15px;
+	color: #ffffff;
+	border: none;
+}
+.reject-btn{
+	margin-top:5%;
+	padding: 1%;
+	width:30%;
+	height:50%;
+	background: red;
+	border-radius:15px;
+	color: #ffffff;
+	border: none;
+}
+.status-title{
+	border-radius:15px;
+	width:100%;
+	text-align:center;
+	background: #3c465a;
+}
+.status-textarea{
+	font-family:Segoe UI;
+	color: #3c465a;
+	border-radius:15px;
+	padding:5%;
+	background:#e6ecf0;
+	width:100%;
+	resize:none;
+	border: 1px;
+}
+.status-inner{
+	padding:5%;
+	background:white;
+	border-radius:15px;
+	color: black;
+	box-shadow: 2px 2px 2px 2px #888888;
+}
+.dropdown-custom{
+overflow: hidden;
+border: 1px solid #000;
+position: relative;
+color: #3c465a;
+border:none;
+width:100%;
+padding:1%;
+font-family:Segoe UI;
+background: #e6ecf0;
 }

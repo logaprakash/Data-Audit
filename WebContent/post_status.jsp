@@ -9,7 +9,7 @@
     Boolean result  = Database.addStatus(new Status(username,email,text,community_name));
    
     if(result){
-    	CustomLog.log("post_status",Message.LOG_INFO,email +" - " + Message.ADDED_STATUS);
+    	CustomLog.log("post_status",Message.LOG_INFO,email +" at "+community_name+" - " + Message.ADDED_STATUS);
     }
     
     response.sendRedirect("profile.jsp");
