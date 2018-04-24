@@ -1,2 +1,14 @@
 2018-04-23 20:42:21 INFO  validate_user:15 - logaprakash98@gmail.com at Auditing - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
 2018-04-23 20:42:38 INFO  post_status:15 - logaprakash98@gmail.com at Auditing - Added a new status :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:09:09 INFO  validate_user:15 - logaprakash98@gmail.com at Auditing - community created :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:09:18 INFO  validate_user:15 - logaprakash98@gmail.com at Auditing - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:09:44 INFO  post_status:15 - logaprakash98@gmail.com at Auditing - Added a new status :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:11:00 INFO  validate_user:15 - deepika@gmail.com at Auditing - community request :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:11:37 INFO  validate_user:15 - sibin@gmail.com at Auditing - community request :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:11:46 INFO  validate_user:21 - sibin@gmail.com at Auditing - not approved :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:12:16 INFO  request_control:15 - deepika@gmail.com at Auditing - approved :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:12:21 INFO  request_control:15 - sibin@gmail.com at Auditing - rejected :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:12:30 INFO  validate_user:15 - deepika@gmail.com at Auditing - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:12:58 INFO  post_status:15 - deepika@gmail.com at Auditing - Added a new status :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:13:05 INFO  logout:15 - logaprakash98@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:13:12 INFO  logout:15 - deepika@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
