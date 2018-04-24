@@ -12,3 +12,9 @@
 2018-04-24 08:12:58 INFO  post_status:15 - deepika@gmail.com at Auditing - Added a new status :: 192.168.86.49 :: Logaprakash_ug2_1337
 2018-04-24 08:13:05 INFO  logout:15 - logaprakash98@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
 2018-04-24 08:13:12 INFO  logout:15 - deepika@gmail.com - Logged Out :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:23:34 INFO  validate_user:15 - logaprakash98@gmail.com at Auditing - community created :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:23:43 INFO  validate_user:21 - logaprakash98@gmail.com at Auditing - User is not in this community :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:23:50 INFO  validate_user:21 - logaprakash98@gmail.com at Auditing - User is not in this community :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:25:05 INFO  validate_user:15 - loga@gmail.com at Some - community created :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:25:14 INFO  validate_user:21 - loga@gmail.com at Some - User is not in this community :: 192.168.86.49 :: Logaprakash_ug2_1337
+2018-04-24 08:26:22 INFO  validate_user:15 - logaprakash98@gmail.com at Auditing - Login In :: 192.168.86.49 :: Logaprakash_ug2_1337

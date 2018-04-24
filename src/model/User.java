@@ -23,7 +23,7 @@ public class User {
 	
 	public User(String email,String password){
 		this.email = email;
-		this.password = password;
+		this.password = encrpt(password);
 		this.username = "";
 		this.community_name = "";
 		this.role = "";
